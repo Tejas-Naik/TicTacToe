@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  background-color: #3b3486;
+  color: #fcfdf2;
+  height: 64px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+}
+
+.box {
+  border: 2px black solid;
+  font-size: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: #7743db;
+}
+
+.gameInfo {
+  font-family: "Poppins", sans-serif;
+  padding: 0 32px;
+}
+
+.imgBox img {
+  display: none;
+}
+
+/* Utility classes (helper classes) */
+.border-right-0 {
+  border-right: 0;
+}
+
+.border-left-0 {
+  border-left: 0;
+}
+
+.border-top-0 {
+  border-top: 0;
+}
+
+.border-bottom-0 {
+  border-bottom: 0;
+}
