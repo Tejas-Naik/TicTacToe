@@ -5,7 +5,7 @@
 }
 
 nav {
-  background-color: #3b3486;
+  background-image: linear-gradient(to left, #8e3200, #a64b2a);
   color: white;
   height: 65px;
   font-size: 27px;
@@ -31,10 +31,14 @@ nav ul {
   grid-template-columns: repeat(3, 10vw);
   font-family: "Roboto", sans-serif;
   position: relative;
+  border: 10px solid #472d2d;
+  border-radius: 10px;
 }
 
 .box {
-  border: 2px solid #393e46;
+  /* background-image: linear-gradient(to left, #8e3200, #a64b2a); */
+  background-image: linear-gradient(to left, #a64b2a, #8e3200);
+  border: 2px solid #d7a86e;
   font-size: 8vw;
   cursor: pointer;
   display: flex;
@@ -43,11 +47,13 @@ nav ul {
 }
 
 .box:hover {
-  background-color: #7743db;
+  background-color: white;
+  z-index: 1000;
 }
 
 .boxtext {
-  color: #1a1a1a;
+  font-size: 65px;
+  color: #fff;
 }
 
 .info {
@@ -99,6 +105,21 @@ nav ul {
   height: 10px;
   width: 0px;
   position: absolute;
-  background-color: #3b3486;
+  background-color: blue;
   transition: width 1s ease-in-out;
+}
+@media screen and (max-width: 950px) {
+  .gameContainer {
+    flex-wrap: wrap;
+  }
+  .gameInfo {
+    margin-top: 34px;
+  }
+  .gameInfo h1 {
+    font-size: 1.5rem;
+  }
+  .container {
+    grid-template-rows: repeat(3, 20vw);
+    grid-template-columns: repeat(3, 20vw);
+  }
 }

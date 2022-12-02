@@ -1,13 +1,19 @@
-console.log("Welcome to Tic Tac Toe")
-let music = new Audio("music.mp3")
-let audioTurn = new Audio("ting.mp3")
-let gameover = new Audio("gameover.mp3")
-let turn = "X"
+console.log("Welcome to Tic Tac Toe");
+let music = new Audio("music.mp3");
+let audioTurn = new Audio("ting.mp3");
+let gameover = new Audio("gameover.mp3");
+const x = new Image(100, 100);
+const o = new Image(100, 100);
+x.src = "./x-img.png";
+o.src = "./o-img.png";
+
+let turn = "❌";
 let isgameover = false;
 
 // Function to change the turn
 const changeTurn = () => {
-    return turn === "X" ? "0" : "X"
+    // return turn === "X" ? "0" : "X";
+    return turn === "❌" ? "Ꚛ" : "❌";
 }
 
 // Function to check for a win
@@ -30,17 +36,19 @@ const checkWin = () => {
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "200px";
             document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
             document.querySelector(".line").style.width = "20vw";
-            document.querySelector(".container").style.filter = "blur(1.5px)";
+            document.querySelector(".container").style.filter = "blur(1px)";
+            document.querySelector(".container").style.pointerEvents = "none";
         }
     })
 }
 
 // Game Logic
-// music.play()
+music.play();
 let boxes = document.getElementsByClassName("box");
-Array.from(boxes).forEach(element => {
+Array.from(boxes).forEach((element, i) => {
     let boxtext = element.querySelector('.boxtext');
     element.addEventListener('click', () => {
+        music.play();
         if (boxtext.innerText === '') {
             boxtext.innerText = turn;
             turn = changeTurn();
@@ -59,11 +67,13 @@ reset.addEventListener('click', () => {
     Array.from(boxtexts).forEach(element => {
         element.innerText = ""
     });
-    turn = "X";
+    turn = "❌";
     isgameover = false
     document.querySelector(".line").style.width = "0vw";
     document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
     document.querySelector(".container").style.filter = "blur(0)";
+    document.querySelector(".container").style.pointerEvents = "auto";
+    music.play();
 })
 
